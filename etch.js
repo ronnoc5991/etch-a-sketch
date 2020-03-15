@@ -1,16 +1,20 @@
 const container = document.getElementById("container");
-container.style.cssText = 'display: flex; flex-wrap: wrap; margin: auto; align-items: center; justify-content: center; align-content: center; background: yellow; width: 90%; height: 90%; overflow: none;';
+container.style.cssText = 'display: flex; flex-wrap: wrap; align-items: center; background: yellow; width: 600px; height: 600px; margin: 0 auto;';
 document.getElementById("button").addEventListener('click' , newGrid);
 
 
-for(i=0; i<=255; i++) { //creates initial 256 squares
+let size = 256
+let denominator = ((1/16)*100);
+let i = 0;
+while (i < size) { //creates initial grid
     var square = document.createElement('div'); //creates a div
     square.id = "square" + i; // assigns the id "square(number)" to the div
     square.className = "squares"; //assigns the class name "squares" to the div... gives it a height/size/color
-    square.style.cssText = "height: 6.25%; width: 6.25%; background: white;"
+    square.style.cssText = "height: " + denominator + "%; width: " + denominator + "%; background: white; outline: solid 0.5px darkblue;"
     square.addEventListener('mouseenter',function(){addClassName(this.id);}); //adds event listener on mouse enter and gives the function the id of the hovered on square
     container.appendChild(square); //appends the square to the container
-    }
+    i++
+}
 
 function addClassName(x) { //adds hover classname to the squares
     let id = document.getElementById(x); // stores the id of the hovered square in the variable "id"
@@ -35,7 +39,7 @@ function newGrid() { //removes all squares from the grid...asks for new dimensio
         var square = document.createElement('div'); //creates a div
         square.id = "square" + i; // assigns the id "square(number)" to the div
         square.className = "squares"; //assigns the class name "squares" to the div... gives it a height/size/color
-        square.style.cssText = "height: " + denominator + "%; width: " + denominator + "%; background: white;"
+        square.style.cssText = "height: " + denominator + "%; width: " + denominator + "%; background: white; outline: solid 0.5px darkblue;"
         square.addEventListener('mouseenter',function(){addClassName(this.id);}); //adds event listener on mouse enter and gives the function the id of the hovered on square
         container.appendChild(square); //appends the square to the container
         i++

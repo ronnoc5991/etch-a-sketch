@@ -7,13 +7,17 @@
         background: yellow;
     }
 
+
     #buttondiv{
         display: flex;
         align-items: center;
         justify-content: center;
+        margin: 0px auto 20px auto;
     }
 
     #button{
+        grid-row-start: 1;
+        grid-row-end: 3;
         margin-top: 20;
         margin-bottom: 20;
     }
@@ -26,10 +30,11 @@
 </style>
     <head></head>
     <body>
-        <div id="buttondiv">
-            <button type="button" id="button">Click Here for a New Sketch Pad!</button>
-        </div>
-        <div id = "container"></div>
+            <div id="buttondiv">
+                <button type="button" id="button">Click Here for a New Sketch Pad!</button>
+            </div>
+
+            <div id = "container"></div>
     </body>
     <script src = 'etch.js'></script>
 </html>
